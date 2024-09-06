@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(117, 119, 126);
+}
+
+.container{
+    width: 200px;
+    height:200px;
+    position: relative;
+}
+
+#cricle{
+    width:150%;
+    height: 150%;
+    border-radius:400% 400% 400% 400%;
+    border: 3px solid rgb(99, 221, 150);
+    overflow: hidden;
+    position: absolute;
+}
+
+#cricle::after{
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 200%;
+    bottom: 100%;
+    top: 200%;
+
+    background:rgb(240, 155, 221);
+    background-position: 500% 50%;
+    border-radius: 50% / 80% 80% 80% 80%;
+
+    animation: move 5s ease-in infinite;
+    animation-delay: .3s;
+}
+
+
+@keyframes move {
+    0%, 100%{
+        top : 50%;
+    }
+    50%{
+        top: -50%;
+        transform: rotate(70deg);
+    }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div id="cricle"></div>       
+      </div>
+</body>
+</html>
